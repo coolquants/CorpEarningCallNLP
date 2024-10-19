@@ -1,20 +1,30 @@
 import pandas as pd
 import io
 
-def get_sp500_tickers(url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"):
-    """
-    This function gets S&P 500 tickers from Wikipeadia
-    :param url: wikipeadia sp500 webpage as default
-    :return: dataframe of the sp500 table
-    """
-    import requests
 
-    # Disable SSL verification warnings for Wikipedia
-    requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
-    # Fetch the content without verifying the SSL certificate
-    response = requests.get(f"{url}", verify=False)
+def read_file(full_path_in):
+    f_t = open(full_path_in, "r", encoding="UTF-8", errors = 'ignore')
+    text_t = f_t.read() #reads entire file
+    #text_t = clean_txt(text_t)
+    f_t.close()
+    return text_t
 
-    # Read the content as a CSV file with pandas
-    ticker_df = pd.read_html(io.StringIO(response.text))[0]
-    return ticker_df
+def file_crawler(path_in):
+    import os
+    import pandas as pd
+    my_pd_t = pd.DataFrame()
+    for root, dirs, files in os.walk(path_in, topdown=False):
+       for name in files:
+           try:
+               txt_t = read_file(root + "/" + name)
+               if len(txt_t) > 0:
+                   the_lab = root.split("/")[-1]
+                   tmp_pd = pd.DataFrame(
+                       {"body": txt_t, "label": the_lab}, index=[0])
+                   my_pd_t = pd.concat(
+                       [my_pd_t, tmp_pd], ignore_index=True)
+           except:
+               print (root + "/" + name)
+               pass
+    return my_pd_t
