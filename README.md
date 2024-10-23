@@ -21,7 +21,7 @@ But for now, I have downloaded a pdf file into the data folder so the functions 
 ### 2.1.2 company stock price 
 We can start with daily and may be move to minutes level as needed since we only need the price data around the earning days. 
 ## 2.2 NLP processor
-### 2.2.1 key context extraction 
-### 2.2.2 sentiment analysis on the sentence(s) around the key context 
+### 2.2.1 key context extraction (Dyuthi)
+### 2.2.2 sentiment analysis on the sentence(s) around the key context (Dyuthi)
 ## 2.3 Regression backtestor 
 ### 2.3.1 regress the stock price against the sentiment analysis around the topic. The theory is that if the sentiment is correct, then we should see the stock price going in the same direction as the sentiment. 
