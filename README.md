@@ -19,7 +19,7 @@ This step is done as a function. (Eric)
 The current source is through factset. (Maud is working on it).
 But for now, I have downloaded a pdf file into the data folder so the functions can be developed and tested against this one file. And Eric is writing a pdf reader function. 
 ### 2.1.2 company stock price 
-We can start with daily and may be move to minutes level as needed since we only need the price data around the earning days. 
+We can start with daily and may be move to minutes level as needed since we only need the price data around the earning days. (Sophia)
 ## 2.2 NLP processor
 ### 2.2.1 key context extraction 
 ### 2.2.2 sentiment analysis on the sentence(s) around the key context 
