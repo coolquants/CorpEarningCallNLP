@@ -23,5 +23,5 @@ We can start with daily and may be move to minutes level as needed since we only
 ## 2.2 NLP processor
 ### 2.2.1 key context extraction (Dyuthi)
 ### 2.2.2 sentiment analysis on the sentence(s) around the key context (Eric & Dyuthi)
-## 2.3 Regression backtestor 
+## 2.3 Regression backtestor (dyuthi & Maud)
 ### 2.3.1 regress the stock price against the sentiment analysis around the topic. The theory is that if the sentiment is correct, then we should see the stock price going in the same direction as the sentiment. 
